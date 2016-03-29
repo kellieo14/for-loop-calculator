@@ -1,6 +1,8 @@
 var max;
 var countBy;
-var output = "";
+var countOutput = "";
+var input;
+var factorialOutput = 1;
 
 var checkInput = function(input){
   if (!input || input < 0) {
@@ -14,16 +16,55 @@ var checkFactors = function(){
   }
 };
 
+var factorial = function(input){
+  factorialOutput = 1;
+  if (!input && input !== 0) {
+    alert("Error: please enter a number!")
+  } else {
+    for (var i = 1; i <= input; i++) {
+      factorialOutput *= i;
+      console.log(i + " " + factorialOutput);
+    }
+  }
+};
 
-max = parseInt(prompt("Maximum Number:"));
-countBy = parseInt(prompt("Count By:"));
+var recursiveFactorial = function(p1) {
+  if (p1 > 0) {
+    factorialOutput *= p1;
+    console.log("output " + factorialOutput);
+    p1 -= 1;
+    console.log("p1 " + p1);
+    recursiveFactorial(p1);
+  }
+};
 
-checkInput(max);
-checkInput(countBy);
-checkFactors();
+$(".recursive-factorial").submit(function(event){
+  event.preventDefault();
+  input = parseInt($("#recursive-factorial").val());
+  recursiveFactorial(input);
+  alert(factorialOutput);
+});
 
-for (var i = 0; i <= (max - countBy); i += countBy){
-  output += (countBy + i) + " ";
-}
 
-alert(output);
+$(".counter").submit(function(event){
+  event.preventDefault();
+  max = parseInt($("#max").val());
+  countBy = parseInt($("#count-by").val());
+
+  checkInput(max);
+  checkInput(countBy);
+  checkFactors();
+
+  for (var i = 0; i <= (max - countBy); i += countBy){
+    countOutput += (countBy + i) + " ";
+  }
+
+  alert(countOutput);
+});
+
+$(".factorial").submit(function(event){
+  event.preventDefault();
+  input = parseInt($("#factorial").val());
+  factorial(input);
+  alert(factorialOutput);
+});

@@ -7,8 +7,43 @@
     <!-- <link rel="stylesheet" href="/css/mystyles.css" media="screen" title="no title" charset="utf-8"> -->
   </head>
   <body>
+    <div class="container">
+      <div class="counter">
+        <form>
+          <div class="form-group">
+            <label for="max">Count to</label>
+            <input id="max" class="form-control" type="text">
+          </div>
+          <div class="form-group">
+            <label for="count-by">Count By</label>
+            <input id="count-by" class="form-control" type="text">
+          </div>
 
-  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-  <script type="text/javascript" src="js/scripts.js"></script>
+          <button type="submit" class="btn">Count!</button>
+        </form>
+      </div>
+      <div class="factorial">
+        <form>
+          <div class="form-group">
+            <label for="factorial">Factorial</label>
+            <input id="factorial" class="form-control" type="text">
+          </div>
+          <button type="submit" class="btn">Factorialize!</button>
+        </form>
+      </div>
+      <div class="recursive-factorial">
+        <form>
+          <div class="form-group">
+            <label for="recursive-factorial">Recursive Factorial</label>
+            <input id="recursive-factorial" class="form-control" type="text">
+          </div>
+          <button type="submit" class="btn">Factorialize! (recursively)</button>
+        </form>
+      </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
   </body>
 </html>
