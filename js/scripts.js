@@ -3,6 +3,8 @@ var countBy;
 var countOutput = "";
 var input;
 var factorialOutput = 1;
+var palindromeInput
+
 
 var checkInput = function(input){
   if (!input || input < 0) {
@@ -37,6 +39,26 @@ var recursiveFactorial = function(p1) {
     recursiveFactorial(p1);
   }
 };
+
+var palindrome = function() {
+
+  palindromeInput = $("#palindrome").val();
+  var palindromeReverse = palindromeInput.slice().split("").reverse().join("");
+
+  console.log(palindromeInput);
+  console.log(palindromeReverse);
+
+  if (palindromeInput === palindromeReverse) {
+    alert(palindromeInput + " is a palindrome");
+  } else {
+    alert(palindromeInput + " is not a palindrome");
+  }
+};
+
+$(".palindrome").submit(function(event) {
+  event.preventDefault();
+  palindrome();
+});
 
 $(".recursive-factorial").submit(function(event){
   event.preventDefault();
