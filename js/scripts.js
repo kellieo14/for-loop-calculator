@@ -3,8 +3,7 @@ var countBy;
 var countOutput = "";
 var input;
 var factorialOutput = 1;
-var palindromeInput
-
+var palindromeInput;
 
 var checkInput = function(input){
   if (!input || input < 0) {
@@ -83,6 +82,22 @@ var primeList = function(){
 
 };
 
+var leapYear = function(num) {
+  if ((num % 4 === 0 && num % 100 !== 0) || num % 400 === 0) {
+    return true
+  }
+}
+
+$(".leap-year").submit(function(event) {
+  event.preventDefault();
+  var yearInput = parseInt($("#leap-year").val());
+  console.log(yearInput);
+  if (leapYear(yearInput) === true) {
+    alert("This is a leap year")
+  } else {
+    alert("This isn't a leap year")
+  }
+});
 
 $(".palindrome").submit(function(event) {
   event.preventDefault();
